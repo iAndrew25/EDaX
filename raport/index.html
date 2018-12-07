@@ -11,41 +11,58 @@
 			<h1>RoMapper</h1>
 			<h4>Discover romanian's ethnographic monuments</h4>
 			<h4 class="authors">Authors</h4>
-			<ul class="authors-name">
-				<li>Otea Andrei</li>
-				<li>Moisii Cosmin</li>
+			<ul property="sa:AuthorsList" class="authors-name">
+				<li property="schema:author">Otea Andrei</li>
+				<li property="schema:author">Moisii Cosmin</li>
 			</ul>
 		</header>
-		<section>
+		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Application description</h3>
 			<p class="align-text">RoMapper aims to offer a simple way for searching and discovering romanian's etnographic monuments.</p>
 			<p class="align-text">The user is able to filter the results based on certain criterias and click them in order to read more about each result.</p>
 		</section>
-		<section>
+		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Architecture</h3>
-			<img src="assets/images/architecture.png" class="center-img" alt="Project architecture">
-			<p class="caption">Image 1. Project architecture</p>
+			<div typeof="sa:image">
+				<img src="assets/images/architecture.png" class="center-img" alt="Project architecture">
+				<figcaption>Image 1. Project architecture</figcaption>
+			</div>
 			<p class="align-text">The main page of the application contains a logo, a simple search input and a filter button.</p>
-			<img src="assets/images/main.png" class="center-img" alt="Main page">
-			<p class="caption">Image 2. Main page</p>
+			<div typeof="sa:image">
+				<img src="assets/images/main.png" class="center-img" alt="Main page">
+				<figcaption>Image 2. Main page</figcaption>
+			</div>
+			
 			<p class="align-text">Once the user starts typing in the search input, the application begins to fetch data fron a dataset, and displays each result as a list, having a picture on the left side, and a title and a small description on the right side of the result box.</p>
 			<p class="align-text">Upon fetching the data from the dataset, the input slighty moves up, and the logo gets smaller, in order to make room for the new results.</p>
-			<img src="assets/images/results.png" class="center-img" alt="Displaying the results">
-			<p class="caption">Image 3. Displaying the results</p>
+		
+			<div typeof="sa:image">
+				<img src="assets/images/results.png" class="center-img" alt="Displaying the results">
+				<figcaption>Image 3. Displaying the results</figcaption>
+			</div>
+
 			<p class="align-text">The user is also able to set filters for the results. Clicking the "Filter" button displays a new box, where the user is able to be more specific about the searching term.</p>
-			<img src="assets/images/filter.png" class="center-img" alt="Setting filters">
-			<p class="caption">Image 4. Setting filters</p>
+
+			<div typeof="sa:image">
+				<img src="assets/images/filter.png" class="center-img" alt="Setting filters">
+				<figcaption>Image 4. Setting filters</figcaption>
+			</div>
+
 			<p class="align-text">After selecting the desired filters, clicking on "Set Filters" the application will begin to fetch the data and display the results, based on the selected filters.</p>
-			<img src="assets/images/result.png" class="center-img" alt="Opening a result">
-			<p class="caption">Image 5. Opening a result</p>
+
+			<div typeof="sa:image">
+				<img src="assets/images/result.png" class="center-img" alt="Opening a result">
+				<figcaption>Image 5. Opening a result</figcaption>
+			</div>
+
 			<p class="align-text">Clicking on a result will open it, displaying more informations and pictures about it.</p>
 		</section>
-		<section>
+		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Datasets</h3>
 			<p class="align-text">When searching a term, the application will read a JSON file, and return the values to the client. Although data.gov.ro exposes a list of <a href="http://data.gov.ro/dataset/monumente-etnografice-din-muzeele-in-aer-liber">romanian ethnographic outdoor monuments</a> in a CSV format, we converted it in a JSON format, so it can be easily used with javascript.</p>
 			<p class="align-text">The relevant results stored in the dataset will be displayed when searching for a term, each result having an anchor to its own page. When clicking a result, the application makes a result to a third party application, which returns more informations about the searched term.</p>
 		</section>
-		<section>
+		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Design</h3>
 			<p class="align-text">The application has a simple user friendly design, which makes intuitive the application flows.</p>
 		</section>
