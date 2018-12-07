@@ -74,6 +74,18 @@ figcaption {
 	margin-bottom: 10px;
 }
 
+.technologies {
+	padding-left: 40px;
+}
+
+.technologies ul {
+	padding-left: 30px;
+}
+
+.flows {
+	padding-left: 40px;
+}
+
 .align-text {
 	text-indent: 20px;
 }

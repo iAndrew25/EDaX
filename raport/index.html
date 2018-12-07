@@ -61,6 +61,47 @@
 			<p class="align-text">Clicking on a result will open it, displaying more informations and pictures about it.</p>
 		</section>
 		<section typeof="schema:ScholarlyArticle">
+			<h3 class="title">Flows</h3>
+			<p class="align-text">The main flows of the apications:</p>
+				<ul class="flows">
+					<li>
+						User types in the search input, the application returns results based on the term entered by the user. A list of results is displayed, each result contains an anchor to the main page of that monument. Clicking on the anchor, the user is sent to a page that contains more informations about the result.
+					</li>
+					<li>
+						User clicks on `Filters` button, the application displays a series of inputs, radio buttons, check boxes. After the user selects the filters, and clicks the `Set filters` button, the application returns a list of results based on the filters selected by the user. Each result contains an anchor to the main page of that monument. Clicking on the anchor, the user is sent to a page that contains more informations about the result.
+					</li>
+				</ul>
+		</section>
+		<section typeof="schema:ScholarlyArticle">
+			<h3 class="title">Technologies</h3>
+			<p class="align-text">The application is build used several technologies:</p>
+
+			<ul class="technologies">
+				<li>HTML</li>
+				<li>CSS
+					<ul>
+						<li>SCSS as preprocessor</li>	
+					</ul>
+				</li>
+				<li>Javascript (using the latest ECMAScript features)
+					<ul>
+						<li>Server-side
+							<ul>
+								<li>Node JS</li>
+								<li>Express JS</li>
+							</ul>
+						</li>
+						<li>Client-side
+							<ul>
+								<li>React JS</li>	
+								<li>Webpack</li>	
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</section>	
+		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Datasets</h3>
 			<p class="align-text">When searching a term, the application will read a JSON file, and return the values to the client. Although data.gov.ro exposes a list of <a href="http://data.gov.ro/dataset/monumente-etnografice-din-muzeele-in-aer-liber">romanian ethnographic outdoor monuments</a> in a CSV format, we converted it in a JSON format, so it can be easily used with javascript.</p>
 			<p class="align-text">The relevant results stored in the dataset will be displayed when searching for a term, each result having an anchor to its own page. When clicking a result, the application makes a result to a third party application, which returns more informations about the searched term.</p>
