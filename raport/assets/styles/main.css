@@ -38,6 +38,11 @@ article > section:last-child {
 	padding-bottom: 100px;
 }
 
+.logo {
+	display: block;
+	margin: 10px auto;
+}
+
 .title {
 	font-variant: small-caps;
 	text-align: center;
