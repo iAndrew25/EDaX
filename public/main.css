@@ -1,0 +1,13 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+}
+
+.absolute-horizontal-center {
+	left: 50%;
+	transform: translateX(-50%);
+}
