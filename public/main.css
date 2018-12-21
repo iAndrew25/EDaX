@@ -5,9 +5,20 @@
 
 body {
 	height: 100%;
-}
+	background-color: #d8d6d8;
+	color: #282828;
+}	
 
 .absolute-horizontal-center {
 	left: 50%;
 	transform: translateX(-50%);
+}
+
+input {
+	border: 1px solid #dfdfdf;
+	border-radius: .25em;
+	box-shadow: 0 1px 0 #bfbebf;
+	display: block;
+	padding: .5em 1.75em;
+	width: 100%;
 }
