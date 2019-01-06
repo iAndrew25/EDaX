@@ -33,9 +33,6 @@ export default {
 		getData: debounce(async function(searchedTerm) {
 			if(searchedTerm) {
 				let {monuments} = await getMonuments(searchedTerm);
-				// eslint-disable-next-line
-				console.log('RESULT', monuments);
-
 				this.monuments = monuments;
 			} else {
 				this.monuments = [];			
@@ -50,12 +47,12 @@ export default {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
 	color: #2c3e50;
 	width: 960px;
 	margin: 10px auto 0 auto;
 }
 .monuments {
+	margin-top: 20px;
 	list-style: none;
 }
 </style>

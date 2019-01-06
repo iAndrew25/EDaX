@@ -11,12 +11,11 @@ app.get('/api/get-monuments', function(req, res) {
 
 	res.json({
 		monuments: store
-			.filter(monument => {
-				return 
+			.filter(monument => 
 					monument['Denumirea în muzeu'].toLowerCase().includes(searchedTerm.toLowerCase()) && 
 					monument['Descriere'] && 
 					monument['URL-ul imaginii']
-			})
+			)
 			.map(monument => ({
 				id: monument['Denumirea în muzeu'] + Math.random(), // don't try this at home
 				title: monument['Denumirea în muzeu'],

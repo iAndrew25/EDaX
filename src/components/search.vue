@@ -1,8 +1,11 @@
 <template>
-	<div class="search">
+	<div class="search" v-bind:class="{searching: searchedValue}">
 		<div class="logo" v-bind:class="{small: searchedValue}"></div>
-		<input type="text" v-model="searchedValue" @keyup="getData(searchedValue)" class="search-input"/>
-		<Filters />
+		<div class="forms">
+			<input type="text" v-model="searchedValue" @keyup="getData(searchedValue)" class="search-input"/>
+			<button @click="toggleDisplayFilters">Adaugă filtre</button>
+		</div>
+		<Filters v-bind:display-filters="displayFilters" />
 	</div>
 </template>
 
@@ -18,7 +21,14 @@ export default {
 	props: ['getData'],
 	data: function() {
 		return {
+			displayFilters: false,
 			searchedValue: ''
+		}
+	},
+	methods: {
+		toggleDisplayFilters: function() {
+			console.log(this.displayFilters);
+			this.displayFilters = !this.displayFilters;
 		}
 	}
 }
@@ -28,14 +38,19 @@ export default {
 .search {
 	position: relative;
 	width: 500px;
-	margin: auto;
+	margin: 20% auto;
+	transition: all .6s;
+}
+.forms {
+	margin: 20px auto 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+.search.searching {
+	margin: 0 auto;
 }
 .search-input {
-	width: 100%;
-	padding: 10px;
-	margin: 10px auto;
-	border-radius: 5px;
-	border: 1px solid #dfdfdf;
-	box-shadow: 0 1px 0 #bfbebf;
+	flex: 1;
+	margin-right: 5px;
 }
 </style>
