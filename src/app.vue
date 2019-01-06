@@ -5,7 +5,7 @@
 		<Search v-bind:get-data="getData" />
 
 		<ul class="monuments" v-if="monuments.length > 0">
-			<li v-for="monument in monuments" :key="monument.title">
+			<li v-for="monument in monuments" :key="monument.id">
 				<Summary v-bind:monument="monument" />
 			</li>
 		</ul>		
@@ -16,6 +16,7 @@
 import Search from './components/search.vue';
 import Summary from './components/summary.vue';
 import {getMonuments} from './services/search-service';
+import debounce from 'lodash/debounce';
 
 export default {
 	name: 'app',
@@ -29,18 +30,17 @@ export default {
 		}
 	},
 	methods: {
-		getData: async function(searchedTerm) {
-			let result = await getMonuments({searchedTerm});
-			// eslint-disable-next-line
-			console.log('RESULT', result);
+		getData: debounce(async function(searchedTerm) {
+			if(searchedTerm) {
+				let {monuments} = await getMonuments(searchedTerm);
+				// eslint-disable-next-line
+				console.log('RESULT', monuments);
 
-			this.monuments.push({
-				thumbnail: 'https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/2/2c/AT_Icons_100x100_Finn.jpg',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex animi natus error reiciendis, sunt perspiciatis cumque odit at iure tempora, doloremque numquam hic eaque. Consequatur provident iusto iure, sequi hic?',
-				title: 'Random title'
-			});
-
-		}
+				this.monuments = monuments;
+			} else {
+				this.monuments = [];			
+			}
+		}, 250)
 	}
 }
 </script>
