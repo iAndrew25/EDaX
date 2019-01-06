@@ -1,7 +1,7 @@
 <template>
 	<div class="search">
 		<div class="logo" v-bind:class="{small: searchedValue}"></div>
-		<input type="text" v-model="searchedValue" class="search-input"/>
+		<input type="text" v-model="searchedValue" @keyup="getData(searchedValue)" class="search-input"/>
 		{{searchedValue}}
 		<Filters />
 	</div>
@@ -16,7 +16,7 @@ export default {
 	components: {
 		Filters
 	},
-	// props: [],
+	props: ['getData'],
 	data: function() {
 		return {
 			searchedValue: ''

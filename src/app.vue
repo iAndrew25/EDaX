@@ -1,16 +1,29 @@
 <template>
 	<div id="app">
-		<Search />
+		<Search v-bind:get-data="getData" />
 	</div>
 </template>
 
 <script>
-import Search from './components/search.vue'
+import Search from './components/search.vue';
+import {getMonuments} from './services/search-service';
 
 export default {
 	name: 'app',
 	components: {
 		Search
+	},
+	data: function() {
+		return {
+			monuments: []
+		}
+	},
+	methods: {
+		getData: async function(searchedTerm) {
+			let result = await getMonuments({searchedTerm});
+			// eslint-disable-next-line
+			console.log('RESULT', result);
+		}
 	}
 }
 </script>
