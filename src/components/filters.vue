@@ -10,11 +10,12 @@
 
 <script>
 /* eslint-disable */
+import {getFiltersConfig} from '../services/search-service';
+
 export default {
 	name: 'Filters',
 	props: ['display'],
 	data: function() {
-		console.log('pro', this.display)
 		return {
 			shouldDisplay: this.display
 		}
@@ -24,6 +25,9 @@ export default {
 			this.displayFilters = !this.displayFilters;
 			console.log("this.displayFilters", this.displayFilters);
 		}
+	},
+	mounted: async function() {
+		let {type, ethnicity, owner, dating, area} = await getFiltersConfig();
 	}
 }
 </script>
