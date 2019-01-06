@@ -1,8 +1,9 @@
 <template>
 	<div class="search">
-		<input type="text" v-model="message" class="search-input"/>
+		<div class="logo" v-bind:class="{small: searchedValue}"></div>
+		<input type="text" v-model="searchedValue" class="search-input"/>
+		{{searchedValue}}
 		<Filters />
-		<p>{{message}}</p>
 	</div>
 </template>
 
@@ -14,10 +15,11 @@ export default {
 	name: 'Search',
 	components: {
 		Filters
-	},	
+	},
+	// props: [],
 	data: function() {
 		return {
-			message: ''
+			searchedValue: ''
 		}
 	}
 }
@@ -26,12 +28,15 @@ export default {
 <style scoped>
 .search {
 	position: relative;
+	width: 500px;
+	margin: auto;
 }
 .search-input {
-	width: 500px;
+	width: 100%;
 	padding: 10px;
-	margin: auto;
+	margin: 10px auto;
 	border-radius: 5px;
-	border: 1px solid #888;
+	border: 1px solid #dfdfdf;
+	box-shadow: 0 1px 0 #bfbebf;
 }
 </style>
