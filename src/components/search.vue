@@ -2,7 +2,7 @@
 	<div class="search" v-bind:class="{searching: searchedValue}">
 		<div class="logo" v-bind:class="{small: searchedValue}"></div>
 		<div class="forms">
-			<input type="text" v-model="searchedValue" @keyup="getData(searchedValue)" class="search-input"/>
+			<input type="text" placeholder="Descoperă România" v-model="searchedValue" @keyup="getData(searchedValue)" class="search-input"/>
 			<button @click="toggleDisplayFilters">Adaugă filtre</button>
 		</div>
 		<Filters v-bind:filter-data="filterData" v-bind:toggle-display-filters="toggleDisplayFilters" v-bind:display-filters="displayFilters" />

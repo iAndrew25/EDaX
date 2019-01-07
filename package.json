@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"start": "concurrently \"npm run client\" \"npm run server\"",
 		"client": "vue-cli-service serve",
 		"server": "nodemon server/server.js",
 		"build": "vue-cli-service build",
@@ -19,6 +20,7 @@
 		"@vue/cli-plugin-eslint": "^3.2.0",
 		"@vue/cli-service": "^3.2.0",
 		"babel-eslint": "^10.0.1",
+		"concurrently": "^4.1.0",
 		"eslint": "^5.8.0",
 		"eslint-plugin-vue": "^5.0.0-0",
 		"nodemon": "^1.18.9",
