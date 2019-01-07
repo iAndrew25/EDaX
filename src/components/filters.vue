@@ -56,17 +56,17 @@
 			</div>
 		</div>	
 
-		<button @click="toggleFilters" class="search">Caută</button>
+		<button @click="searchWithFilters" class="search">Caută</button>
 	</div>
 </template>
 
 <script>
 /* eslint-disable */
-import {getFiltersConfig} from '../services/search-service';
+import {getFiltersConfig, getMonuments} from '../services/search-service';
 
 export default {
 	name: 'Filters',
-	props: ['displayFilters'],
+	props: ['displayFilters', 'filterData', 'toggleDisplayFilters'],
 	data: function() {
 		return {
 			selectedType: '',
@@ -82,8 +82,9 @@ export default {
 		}
 	},
 	methods: {
-		toggleFilters: function() {
-
+		searchWithFilters: function() {
+			this.toggleDisplayFilters();
+			this.filterData(this.selectedType, this.selectedEthnicity, this.selectedOwner, this.selectedDating, this.selectedArea);
 		}
 	},
 	mounted: async function() {

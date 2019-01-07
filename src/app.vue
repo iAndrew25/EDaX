@@ -30,9 +30,9 @@ export default {
 		}
 	},
 	methods: {
-		getData: debounce(async function(searchedTerm) {
-			if(searchedTerm) {
-				let {monuments} = await getMonuments(searchedTerm);
+		getData: debounce(async function(searchedValue, type, ethnicity, owner, dating, area) {
+			if(searchedValue || type || ethnicity || owner || dating || area) {
+				let {monuments} = await getMonuments(searchedValue, type, ethnicity, owner, dating, area);
 				this.monuments = monuments;
 			} else {
 				this.monuments = [];			

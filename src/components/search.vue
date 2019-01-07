@@ -5,7 +5,7 @@
 			<input type="text" v-model="searchedValue" @keyup="getData(searchedValue)" class="search-input"/>
 			<button @click="toggleDisplayFilters">Adaugă filtre</button>
 		</div>
-		<Filters v-bind:display-filters="displayFilters" />
+		<Filters v-bind:filter-data="filterData" v-bind:toggle-display-filters="toggleDisplayFilters" v-bind:display-filters="displayFilters" />
 	</div>
 </template>
 
@@ -27,8 +27,10 @@ export default {
 	},
 	methods: {
 		toggleDisplayFilters: function() {
-			console.log(this.displayFilters);
 			this.displayFilters = !this.displayFilters;
+		},
+		filterData: function(selectedType, selectedEthnicity, selectedOwner, selectedDating, selectedArea) {
+			this.getData(this.searchedValue, selectedType, selectedEthnicity, selectedOwner, selectedDating, selectedArea);
 		}
 	}
 }

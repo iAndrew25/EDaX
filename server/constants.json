@@ -1,4 +1,4 @@
 {
-	"ethnicity": ["români", "lipoveni", "sârbi", "sași", "secui", "maghiari", "tătari", "șvabi", "ucrainieni", "evrei", "huțuli"],
-	"type": ["Moară", "Complex", "Stână", "Gospodărie", "Staul", "Atelier", "Casă", "Mijloc de transport", "Dârstă", "Cuptor", "Monument religios", "Han"]
+	"ethnicity": ["romani", "lipoveni", "sarbi", "sasi", "secui", "maghiari", "tatari", "svabi", "ucrainieni", "evrei", "hutuli"],
+	"type": ["Moara", "Complex", "Stana", "Gospodarie", "Staul", "Atelier", "Casa", "Mijloc de transport", "Darsta", "Cuptor", "Monument religios", "Han"]
 }
