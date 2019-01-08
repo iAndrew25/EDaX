@@ -62,7 +62,7 @@
 
 <script>
 /* eslint-disable */
-import {getFiltersConfig, getMonuments} from '../services/search-service';
+import {getFiltersConfig, getMonuments} from '../../../services/search-service';
 
 export default {
 	name: 'Filters',

@@ -6,6 +6,7 @@
 		<div class="content">
 			<div class="title">{{monument.title}}</div>
 			<div class="description">{{monument.description}}</div>
+			<router-link to="/monument/325" class="read-more">Citește mai mult</router-link>
 		</div>
 	</div>
 </template>
@@ -53,5 +54,16 @@ export default {
 .title {
 	font-size: 17px;
 	font-weight: bold;
+}
+
+.read-more {
+	text-decoration: none;
+	color: black;
+	font-style: italic;
+	font-size: 13px;
+}
+
+.read-more:hover {
+	text-decoration: underline;
 }
 </style>
