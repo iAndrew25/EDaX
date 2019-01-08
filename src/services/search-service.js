@@ -1,5 +1,5 @@
-import fetch from '../config/fetch';
-import {appendParams} from '../utils';
+import fetch from '../commons/fetch';
+import {appendParams} from '../commons/utils';
 
 export const getMonuments = (searchedTerm, type, ethnicity, owner, dating, area) => {
 	return fetch(appendParams(`/get-monuments`, [{

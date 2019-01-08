@@ -1,15 +1,20 @@
 <template>
 	<div class="monument">
-		<h1>Monument</h1>
+		<h1>{{this.selectedMonument.title}}</h1>
 	</div>
 </template>
 
 <script>
 /* eslint-disable */
+import { mapState } from 'vuex';
+
 export default {
 	name: 'Monument',
 	props: {
-	//	monument: Object
+		monument: Object
+	},
+	computed: {
+		...mapState(['selectedMonument'])
 	}
 }
 </script>
