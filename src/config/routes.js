@@ -13,7 +13,7 @@ export default new VueRouter({
 		path: '/', 
 		component: App
 	}, {
-		path: '/monument', 
+		path: '/monument/:id', 
 		component: Monument
 	}]
 });

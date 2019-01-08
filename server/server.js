@@ -20,12 +20,47 @@ app.get('/api/get-monuments', function(req, res) {
 				(area ? monument['Zona ennografica de provenienta'].includes(area) : true)
 			)
 			.map(monument => ({
-				id: monument['Denumirea in muzeu'] + Math.random(), // don't try this at home
+				id: monument.id,
 				title: monument['Denumirea in muzeu'],
 				thumbnail: monument['URL-ul imaginii'] || 'http://www.fenland.gov.uk/media/11083/Placeholder-Image/thumbnail/20140518072131!Placeholder.jpg',
 				description: monument['Descriere']
 			}))
 	})
+});
+
+app.get('/api/get-monument', function(req, res) {
+	let {monumentId} = req.query,
+		{
+			["Muzeul detinator"]: museum,
+			["Denumirea ansamblului"]: name,
+			["Tipul ansamblului"]: type,
+			["Denumirea in muzeu"]: title,
+			["Denumirea la origice"]: originalName,
+			["Etnia"]: ethnicity,
+			["Datarea"]: dating,
+			["Zona ennografica de provenienta"]: area,
+			["Localitatea de provenienta"]: locality,
+			["Descriere"]: description,
+			["Imprejmuiri"]: fencing,
+			["Bibliografie"]: bibliography,
+			["URL-ul imaginii"]: thumbnail,		
+		} = store.find(({id}) => id === monumentId) || {};
+		
+	res.json({
+		museum,
+		name,
+		type,
+		title,
+		originalName,
+		ethnicity,
+		dating,
+		area,
+		locality,
+		description,
+		fencing,
+		bibliography,
+		thumbnail
+	});
 });
 
 app.get('/api/get-filters-config', function(req, res) {

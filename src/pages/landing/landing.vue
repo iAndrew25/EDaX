@@ -35,7 +35,7 @@ export default {
 				let {monuments} = await getMonuments(searchedValue, type, ethnicity, owner, dating, area);
 				this.monuments = monuments;
 			} else {
-				this.monuments = [];			
+				this.monuments = [];
 			}
 		}, 250)
 	}

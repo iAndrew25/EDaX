@@ -24,3 +24,5 @@ export const getMonuments = (searchedTerm, type, ethnicity, owner, dating, area)
 }
 
 export const getFiltersConfig = () => fetch(`/get-filters-config`);
+
+export const getMonumentById = monumentId => fetch(`/get-monument?monumentId=${monumentId}`);

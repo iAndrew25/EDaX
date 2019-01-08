@@ -6,24 +6,18 @@
 		<div class="content">
 			<div class="title">{{monument.title}}</div>
 			<div class="description">{{monument.description}}</div>
-			<router-link to="/monument">
-				<span class="read-more" @click="setSelectedMonument(monument)">Citește mai mult</span>
-			</router-link>
+			<router-link v-bind:to="'/monument/' + monument.id" class="read-more">Citește mai mult</router-link>
 		</div>
 	</div>
 </template>
 
 <script>
 /* eslint-disable */
-import { mapMutations } from 'vuex';
 
 export default {
 	name: 'Summary',
 	props: {
 		monument: Object
-	},
-	methods: {
-		...mapMutations(['setSelectedMonument'])
 	}
 }
 </script>

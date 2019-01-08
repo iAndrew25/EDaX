@@ -1,20 +1,31 @@
 <template>
 	<div class="monument">
-		<h1>{{this.selectedMonument.title}}</h1>
+		<h1>{{this.monument.title}}</h1>
+		<p>{{this.monument.description}}</p>
 	</div>
 </template>
 
 <script>
 /* eslint-disable */
-import { mapState } from 'vuex';
+import {getMonumentById} from '../../services/search-service';
 
 export default {
 	name: 'Monument',
-	props: {
-		monument: Object
+	data: function() {
+		return {
+			monument: {}
+		}
 	},
-	computed: {
-		...mapState(['selectedMonument'])
+	methods: {
+
+	},
+	mounted: async function() {
+		try {
+			let result = await getMonumentById(this.$route.params.id);
+			this.monument = result;
+		} catch(err) {
+			console.error(err);
+		}
 	}
 }
 </script>

@@ -5,11 +5,14 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		selectedMonument: {}
+		monuments: []
 	},
 	mutations: {
-		setSelectedMonument: function(state, selectedMonument) {
-			state.selectedMonument = selectedMonument
+		setMonuments: function(state, monuments) {
+			state.monuments = monuments;
 		}
+	},
+	getters: {
+		getMonument: state => monumentId => state.monuments.find(({id}) => id === monumentId)
 	}
-})
+});
