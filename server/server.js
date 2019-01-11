@@ -17,7 +17,8 @@ app.get('/api/get-monuments', function(req, res) {
 				(ethnicity ? monument['Etnia'].includes(ethnicity) : true) &&
 				(owner ? monument['Muzeul detinator'].includes(owner) : true) &&
 				(dating ? monument['Datarea'].includes(dating) : true) &&
-				(area ? monument['Zona ennografica de provenienta'].includes(area) : true)
+				(area ? monument['Zona ennografica de provenienta'].includes(area) : true) &&
+				monument['Descriere']
 			)
 			.map(monument => ({
 				id: monument.id,
