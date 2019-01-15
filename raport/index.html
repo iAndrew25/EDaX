@@ -27,7 +27,7 @@
 		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Architecture</h3>
 			<div typeof="sa:image">
-				<img src="assets/images/architecture.png" class="center-img" alt="Project architecture">
+				<img src="assets/images/diagrams/architecture.png" class="center-img" alt="Project architecture">
 				<figcaption>Image 1. Project architecture</figcaption>
 			</div>
 			<p class="align-text">The main page of the application contains a logo, a simple search input and a filter button.</p>
@@ -80,7 +80,7 @@
 				<li>HTML</li>
 				<li>CSS
 					<ul>
-						<li>SCSS as preprocessor</li>	
+						<li>SCSS as preprocessor</li>
 					</ul>
 				</li>
 				<li>Javascript (using the latest ECMAScript features)
@@ -93,8 +93,8 @@
 						</li>
 						<li>Client-side
 							<ul>
-								<li>React JS</li>	
-								<li>Webpack</li>	
+								<li>Vue JS</li>
+								<li>Webpack</li>
 							</ul>
 						</li>
 					</ul>
@@ -107,12 +107,66 @@
 			<p class="align-text">The relevant results stored in the dataset will be displayed when searching for a term, each result having an anchor to its own page. When clicking a result, the application makes a result to a third party application, which returns more informations about the searched term.</p>
 		</section>
 		<section typeof="schema:ScholarlyArticle">
-			<h3 class="title">Design</h3>
-			<p class="align-text">The application is intuitive and has a simple user friendly design.</p>
+			<h3 class="title">Input/Output data formats and data flows</h3>
+			<p class="align-text">As the user starts typing in the search bar, the client uses a <em>debounce</em> function, that delays invoking function until 250 milliseconds have elapsed since the last time the <em>debounced</em> function was invoked. This function sends a request to the server, having as parameter the searched value and/or the added filters. The server responds with a list of items that match the searched value and/or the added filters.</p>
+			<p class="align-text">Img. 6. displays an example of request made by the client when the user typed `han` keyword. The server responds with a list of 5 items matching the searched value.</p>
 			<div typeof="sa:image">
-				<img src="assets/images/index.png" class="center-img" alt="Application's first page">
-				<figcaption>Image 6. Application's first page</figcaption>
-			</div>			
+				<img src="assets/images/search-request.png" class="center-img full-width" alt="Search request">
+				<figcaption>Image 6. Search request</figcaption>
+			</div>
+			<p class="align-text">Each item of the list contains:</p>
+			<ul class="technologies">
+				<li><em>id</em> of the monument</li>
+				<li><em>title</em> of the monument</li>
+				<li><em>description</em> of the monument</li>
+				<li><em>thumbnail</em> of the monument</li>
+			</ul><br />
+			<p class="align-text">Based on these properties, the client renders a summary about each monument.</p>
+			<div typeof="sa:image">
+				<img src="assets/images/summary.png" class="center-img full-width" alt="Monument summary">
+				<figcaption>Image 7. Monument summary</figcaption>
+			</div>
+			<p class="align-text">If the user wants to read more about a certain monument, he clicks on the `Citește mai mult` link, which redirects him to a new page dedicated to the selected monument.</p>
+			<p class="align-text">The client sends a new request to the server asking for all the informations of the selected monument, based on its <em>id</em>.</p>
+			<div typeof="sa:image">
+				<img src="assets/images/monument-request.png" class="center-img full-width" alt="Monument request">
+				<figcaption>Image 8. Monument request</figcaption>
+			</div>
+			<p class="align-text">In the img. 8, we can see that the client sends the monument id to the server, and it responds with a series of properties:</p>
+			<ul class="technologies">
+				<li><em>area</em></li>
+				<li><em>bibliography</em></li>
+				<li><em>dating</em></li>
+				<li><em>description</em></li>
+				<li><em>ethnicity</em></li>
+				<li><em>fencing</em></li>
+				<li><em>locality</em></li>
+				<li><em>museum</em></li>
+				<li><em>name</em></li>
+				<li><em>originalName</em></li>
+				<li><em>thumbnail</em></li>
+				<li><em>title</em></li>
+				<li><em>type</em></li>
+			</ul><br />
+			<p class="align-text">Client then displays the data.</p>
+		</section>
+		<section typeof="schema:ScholarlyArticle">
+			<h3 class="title">Design</h3>
+			<p class="align-text">The application is intuitive and has a simple user friendly design. Img. 6. displays the first page of the application, having the filters box closed.</p>
+			<div typeof="sa:image">
+				<img src="assets/images/index-search.png" class="center-img full-width" alt="Application's first page filters closed">
+				<figcaption>Image 6. Application's first page filters closed</figcaption>
+			</div>
+			<p class="align-text">Img. 7. displays the first page of the application, having the filters box opened.</p>
+			<div typeof="sa:image">
+				<img src="assets/images/index-filters.png" class="center-img full-width" alt="Application's first page filters open">
+				<figcaption>Image 7. Application's first page filters open</figcaption>
+			</div>
+			<p class="align-text">Img. 8. displays a monument page, that contains a series of informations about the selected monument, and a picture of it.</p>
+			<div typeof="sa:image">
+				<img src="assets/images/monument-page.png" class="center-img full-width" alt="Monument page">
+				<figcaption>Image 8. Monument page</figcaption>
+			</div>
 		</section>
 	</article>
 </body>

@@ -67,6 +67,10 @@ article > section:last-child {
 	margin: 10px auto 0 auto;
 }
 
+.full-width {
+	width: 100%;
+}
+
 figcaption {
 	text-align: center;
 	font-style: italic;
