@@ -124,8 +124,11 @@
 
 			<div typeof="sa:image">
 				<img src="assets/images/diagrams/activity.png" class="center-img full-width" alt="Activity diagram">
-				<figcaption>Image 7. Activity diagram</figcaption>
+				<figcaption>Image 6. Activity diagram</figcaption>
 			</div>
+		
+			<p class="align-text">The first page is represented by a search bar and a button which opens the filters box. After a search, the feature filters the data from the dataset. If there is no data found, it doesn't display anything, else it displays a list of monuments.</p>
+			<p class="align-text">The user clicks 'Citeste mai mult' anchor and the application opens the monument page. On the monument page the user can view a series of details about the selected monument, a map displaying the location where is the monument situated, and a series of visualisation features. If ether of the API used in the visualisation area is not valid, then none of the visualisation will be displayed, else the 2D and 3D visualisations will be shown on the page.</p>
 
 			<p class="align-text">Usecase diagram:</p>
 
@@ -143,21 +146,21 @@
 						User types in the search input, the application returns results based on the term entered by the user. A list of results is displayed, each result contains an anchor to the main page of that monument. Clicking on the anchor, the user is sent to a page that contains more informations about the result.
 						<div typeof="sa:image">
 							<img src="assets/images/flows/simple-search.gif" class="center-img full-width" alt="Simple search flow">
-							<figcaption>Image 7. Simple search flow</figcaption>
+							<figcaption>Image 8. Simple search flow</figcaption>
 						</div>
 					</li>
 					<li>
 						User clicks on `Filters` button, the application displays a series of inputs, radio buttons, check boxes. After the user selects the filters, and clicks the `Set filters` button, the application returns a list of results based on the filters selected by the user. Each result contains an anchor to the main page of that monument. Clicking on the anchor, the user is sent to a page that contains more informations about the result.
 						<div typeof="sa:image">
 							<img src="assets/images/flows/filter-search.gif" class="center-img full-width" alt="Filter search flow">
-							<figcaption>Image 7. Filter search flow</figcaption>
+							<figcaption>Image 9. Filter search flow</figcaption>
 						</div>
 					</li>
 					<li>
 						After a successfully search, the user can click on 'Citește mai mult' anchor to open the monument page. It displays a series of details about the selected monument. Returning to the home page will be made by clicking on the RoMapper logo displayed in the top-left area of the page.
 						<div typeof="sa:image">
 							<img src="assets/images/flows/open-monument.gif" class="center-img full-width" alt="Open monument flow">
-							<figcaption>Image 7. Open monument flow</figcaption>
+							<figcaption>Image 10. Open monument flow</figcaption>
 						</div>
 					</li>
 				</ul>
@@ -199,10 +202,10 @@
 		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Input/Output data formats and data flows</h3>
 			<p class="align-text">As the user starts typing in the search bar, the client uses a <em>debounce</em> function, that delays invoking function until 250 milliseconds have elapsed since the last time the <em>debounced</em> function was invoked. This function sends a request to the server, having as parameter the searched value and/or the added filters. The server responds with a list of items that match the searched value and/or the added filters.</p>
-			<p class="align-text">Img. 6. displays an example of request made by the client when the user typed `han` keyword. The server responds with a list of 5 items matching the searched value.</p>
+			<p class="align-text">Img. 11. displays an example of request made by the client when the user typed `han` keyword. The server responds with a list of 5 items matching the searched value.</p>
 			<div typeof="sa:image">
 				<img src="assets/images/search-request.png" class="center-img full-width" alt="Search request">
-				<figcaption>Image 6. Search request</figcaption>
+				<figcaption>Image 11. Search request</figcaption>
 			</div>
 			<p class="align-text">Each item of the list contains:</p>
 			<ul class="technologies">
@@ -214,15 +217,15 @@
 			<p class="align-text">Based on these properties, the client renders a summary about each monument.</p>
 			<div typeof="sa:image">
 				<img src="assets/images/summary.png" class="center-img full-width" alt="Monument summary">
-				<figcaption>Image 7. Monument summary</figcaption>
+				<figcaption>Image 12. Monument summary</figcaption>
 			</div>
 			<p class="align-text">If the user wants to read more about a certain monument, he clicks on the `Citește mai mult` link, which redirects him to a new page dedicated to the selected monument.</p>
 			<p class="align-text">The client sends a new request to the server asking for all the informations of the selected monument, based on its <em>id</em>.</p>
 			<div typeof="sa:image">
 				<img src="assets/images/monument-request.png" class="center-img full-width" alt="Monument request">
-				<figcaption>Image 8. Monument request</figcaption>
+				<figcaption>Image 13. Monument request</figcaption>
 			</div>
-			<p class="align-text">In the img. 8, we can see that the client sends the monument id to the server, and it responds with a series of properties:</p>
+			<p class="align-text">In the img. 13, we can see that the client sends the monument id to the server, and it responds with a series of properties:</p>
 			<ul class="technologies">
 				<li><em>area</em></li>
 				<li><em>bibliography</em></li>
@@ -242,20 +245,20 @@
 		</section>
 		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Design</h3>
-			<p class="align-text">The application is intuitive and has a simple user friendly design. Img. 6. displays the first page of the application, having the filters box closed.</p>
+			<p class="align-text">The application is intuitive and has a simple user friendly design. Img. 14. displays the first page of the application, having the filters box closed.</p>
 			<div typeof="sa:image">
 				<img src="assets/images/index-search.png" class="center-img full-width" alt="Application's first page filters closed">
-				<figcaption>Image 6. Application's first page filters closed</figcaption>
+				<figcaption>Image 14. Application's first page filters closed</figcaption>
 			</div>
-			<p class="align-text">Img. 7. displays the first page of the application, having the filters box opened.</p>
+			<p class="align-text">Img. 15. displays the first page of the application, having the filters box opened.</p>
 			<div typeof="sa:image">
 				<img src="assets/images/index-filters.png" class="center-img full-width" alt="Application's first page filters open">
-				<figcaption>Image 7. Application's first page filters open</figcaption>
+				<figcaption>Image 15. Application's first page filters open</figcaption>
 			</div>
-			<p class="align-text">Img. 8. displays a monument page, that contains a series of informations about the selected monument, and a picture of it.</p>
+			<p class="align-text">Img. 16. displays a monument page, that contains a series of informations about the selected monument, and a picture of it.</p>
 			<div typeof="sa:image">
 				<img src="assets/images/monument-page.png" class="center-img full-width" alt="Monument page">
-				<figcaption>Image 8. Monument page</figcaption>
+				<figcaption>Image 16. Monument page</figcaption>
 			</div>
 		</section>
 	</article>
