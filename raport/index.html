@@ -54,21 +54,111 @@
 			<p class="align-text">After selecting the desired filters, clicking on "Set Filters" the application will begin to fetch the data and display the results, based on the selected filters.</p>
 
 			<div typeof="sa:image">
-				<img src="assets/images/result.png" class="center-img" alt="Opening a result">
+				<img src="assets/images/monument-page-wireframe.png" class="center-img" alt="Opening a result">
 				<figcaption>Image 5. Opening a result</figcaption>
 			</div>
 
 			<p class="align-text">Clicking on a result will open it, displaying more informations and pictures about it.</p>
 		</section>
 		<section typeof="schema:ScholarlyArticle">
+			<h3 class="title">Modules</h3>
+			<p class="align-text">The main modules of the apications are:</p>
+				<ul class="flows">
+					<li>
+						List of monuments:
+						<p>The user is able to search a specific monument based on two criterias:</p>
+						<ul>
+							<li>Search feature - The user types in the search input, and the feature is filtering the data from its dataset, based on the title and the description of the monument, and displays them on the page on each character press.</li>
+							<li>Filters feature - The user is able to select specific details about the wanted monument through the filters box. After opening the filters box, the user can see a series of dropdowns, radio boxes and check boxes and select them in order for the feature to return all the matched monuments, in a list form, only after the 'Search' button had been pressed.</li>
+						</ul>
+						<p>After a search, the aplication displays on the page a list of monuments, each monument having:</p>
+						<ul>
+							<li>Image</li>
+							<li>Title</li>
+							<li>Description</li>
+							<li>A button for 'Read more'</li>
+						</ul>
+					</li>
+					<li>
+						View monument:
+						<p>Each monument page displays:</p>
+						<ul>
+							<li>Series of details about the monument:
+								<ul>
+									<li>Picture</li>
+									<li>Title</li>
+									<li>Description</li>
+									<li>Dating</li>
+									<li>Area</li>
+									<li>Locality</li>
+									<li>Bibliography</li>
+									<li>Ethnicity</li>
+									<li>Fencing</li>
+									<li>Museum owner</li>
+									<li>Original name</li>
+									<li>Monument type</li>
+								</ul>
+							</li>
+							<li>Map location - using Google Maps API the feature displays a pin on the area where is the museum located.</li>
+						</ul>
+					</li>
+					<li>
+						Visualisation:
+						<ul>
+							<li>2D Visualisation - based on the data found on the datasets, the application displays different pictures and 2D graphics about the monument.</li>
+							<li>3D Visualisation - based on the data found on the datasets, and an external API, the feature is able to display 3D images of monuments:
+								<ul>
+									<li>The interior of the monument</li>
+									<li>Different items inside the monument</li>
+									<li>A general 3D view of the monument</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			<p>Each of these modules will be displayed in the following diagrams.</p>
+		</section>
+		<section typeof="schema:ScholarlyArticle">
+			<h3 class="title">Diagrams</h3>
+			<p class="align-text">Activity diagram:</p>
+
+			<div typeof="sa:image">
+				<img src="assets/images/diagrams/activity.png" class="center-img full-width" alt="Activity diagram">
+				<figcaption>Image 7. Activity diagram</figcaption>
+			</div>
+
+			<p class="align-text">Usecase diagram:</p>
+
+			<div typeof="sa:image">
+				<img src="assets/images/diagrams/usecase.png" class="center-img full-width" alt="Usecase diagram">
+				<figcaption>Image 7. Usecase diagram</figcaption>
+			</div>
+
+		</section>		
+		<section typeof="schema:ScholarlyArticle">
 			<h3 class="title">Flows</h3>
 			<p class="align-text">The main flows of the apications:</p>
 				<ul class="flows">
 					<li>
 						User types in the search input, the application returns results based on the term entered by the user. A list of results is displayed, each result contains an anchor to the main page of that monument. Clicking on the anchor, the user is sent to a page that contains more informations about the result.
+						<div typeof="sa:image">
+							<img src="assets/images/flows/simple-search.gif" class="center-img full-width" alt="Simple search flow">
+							<figcaption>Image 7. Simple search flow</figcaption>
+						</div>
 					</li>
 					<li>
 						User clicks on `Filters` button, the application displays a series of inputs, radio buttons, check boxes. After the user selects the filters, and clicks the `Set filters` button, the application returns a list of results based on the filters selected by the user. Each result contains an anchor to the main page of that monument. Clicking on the anchor, the user is sent to a page that contains more informations about the result.
+						<div typeof="sa:image">
+							<img src="assets/images/flows/filter-search.gif" class="center-img full-width" alt="Filter search flow">
+							<figcaption>Image 7. Filter search flow</figcaption>
+						</div>
+					</li>
+					<li>
+						After a successfully search, the user can click on 'Citește mai mult' anchor to open the monument page. It displays a series of details about the selected monument. Returning to the home page will be made by clicking on the RoMapper logo displayed in the top-left area of the page.
+						<div typeof="sa:image">
+							<img src="assets/images/flows/open-monument.gif" class="center-img full-width" alt="Open monument flow">
+							<figcaption>Image 7. Open monument flow</figcaption>
+						</div>
 					</li>
 				</ul>
 		</section>
